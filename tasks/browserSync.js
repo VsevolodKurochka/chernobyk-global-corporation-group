@@ -10,7 +10,7 @@ const reload = (done) => {
 const serve = (done) => {
 	global.watch = true;
 	server.init({
-		proxy: 'localhost/chernobyk-global-corporation-group',
+		proxy: 'chernobyk.global-corporation-group',
 		notify: false
 	});
 	done();

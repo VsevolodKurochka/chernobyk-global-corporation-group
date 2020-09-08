@@ -1,7 +1,7 @@
 {
-  "name": "chernobyk.grono",
+  "name": "chernobyk.global-corporation-group",
   "version": "1.0.0",
-  "description": "Grono landing page",
+  "description": "Global Corporation Group landing page",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
