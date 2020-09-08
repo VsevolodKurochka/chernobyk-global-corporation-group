@@ -12,7 +12,7 @@ $platform-service-md-offset: 140px
   &__bg
     +a()
     z-index: -1
-    max-height: 120px
+    max-height: 70px
     +min(sm)
       max-height: 200px
     +min(lg)
@@ -69,12 +69,16 @@ $platform-service-md-offset: 140px
       margin: 0 auto 5px
       +size(60px)
       img
-        max-height: 60px
+        max-height: 30px
+        max-width: 30px
       +min(sm)
         +mb(15px)
       +min(md)
         +size(112px)
         +mb(25px)
+        img
+          max-height: 60px
+          max-width: 60px
     &-title
       +c($color-gray)
       +fs(14px)

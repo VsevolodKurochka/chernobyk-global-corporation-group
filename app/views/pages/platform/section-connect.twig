@@ -1,5 +1,13 @@
 {% import 'macros/landing.twig' as landing %}
+{% set bgImages = ['img/circle.png'] %}
 <section class="about about-connect" id="section-about">
+    {% for image in bgImages %}
+        {{ landing.image({
+            src: image,
+            alt: "bg-#{loop.index}",
+            class: "about-connect-bg about-connect-bg_#{loop.index}"
+        }) }}
+    {% endfor %}
     <div class="container">
         {% include 'components/common/section-header.twig' with {
             class: 'about__header section-header_white',
@@ -10,7 +18,8 @@
             <div class="col-12 col-sm-6 col-md-5 about-connect-content ">
                 <p class="about__content">{{ content }}</p>
                 <p class="about__quote">
-                    Поэтому, попасть на Платформу можно только по реферальной ссылке от участника Сообщества.
+                    Поэтому, попасть на Платформу можно  только по реферальной ссылке
+                    от участника Сообщества GCG.
                 </p>
                 <button
                     class="btn btn_brand-1"
@@ -20,16 +29,6 @@
                 </button>
             </div>
             <div class="col-12 col-sm-6 col-md-5 about-connect-animation">
-                {% if title %}
-                    <div class="about-connect-animation__title-wrapper">
-                        <p class="about-connect-animation__title">{{ title }}</p>
-                    </div>
-                {% endif %}
-                {{ landing.image({
-                    src: 'img/wine.png',
-                    alt: 'Сообщество единомышленников-предпринимателей из 151 страны мира.',
-                    class: 'about-connect-animation__wine'
-                }) }}
                 {{ landing.image({
                     src: formPictureSrc,
                     alt: 'Сообщество единомышленников-предпринимателей из 151 страны мира.',

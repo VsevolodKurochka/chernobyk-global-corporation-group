@@ -2,7 +2,7 @@
   +r()
   padding: 90px 15px 30px 15px
   +c($color-white)
-  +bgc($color-brand-2-darken)
+  +bgc(#181118)
   overflow: hidden
   +min(sm)
     +py(160px, 60px)
@@ -12,8 +12,7 @@
   &__row
     +r()
     +fs(0)
-    +mb(-45px)
-    +mb(-130px)
+    +mb(-15px)
 
     +min(sm)
       display: flex
@@ -21,23 +20,20 @@
       flex-flow: row-reverse wrap
       +ai(center)
       +jc(center)
-
-    +min(md)
-      +mb(-190px)
+      +mb(-45px)
 
   &__wrapper
     +tr()
     cursor: pointer
     &:hover
       opacity: 0.7
-    +min(sm)
-      max-width: 400px
-    +min(md)
-      max-width: none
 
   &__content
-    +max(sm)
-      +ta(center)
+    text-align: center
+    +min(sm)
+      text-align: left
+      +a(35%, null, null, 55%)
+      z-index: 1
 
   &__man
     +max(sm)
@@ -55,23 +51,36 @@
           transform: translateY(-10px)
     +r()
     +fs(12px)
-    +max(sm)
-      +mb(30px)
+    +mb(30px)
     +min(sm)
+      +mb(0)
       +fs(16px)
     +min(md)
       +fs(20px)
-      top: -60px
     &:before
       content: ''
-      +a(60px, null, null, 0)
+      +a(60px, null, null, 35px)
       +bgi('../img/model-arrow-white.png')
-      +size(80px, 65px)
+      +size(25px, 70px)
+      z-index: 1
       +max(sm)
-        transform: rotate(-70deg)
+        transform: rotate(30deg)
       +min(sm)
-        top: 25px
-        left: -50%
+        top: 85px
+        left: -25px
         animation: capabilityArrow 1s infinite
       +min(md)
-        +size(122px, 99px)
+        +size(53px, 144px)
+
+  &__bg
+    +a()
+    z-index: 1
+    max-height: 50px
+    +min(sm)
+      max-height: 80px
+    &_1
+      top: 0
+      left: 0
+      +min(sm)
+        top: 5%
+        left: 15%

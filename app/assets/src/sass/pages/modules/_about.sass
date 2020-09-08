@@ -124,7 +124,7 @@
           +ai(self-start)
 
   &-connect
-    +bgc($color-brand-2-darken)
+    +bgi('../img/about-connect.jpg')
     +pb(100px)
     +min(sm)
       +pb(200px)
@@ -167,16 +167,20 @@
           +min(sm)
             left: -30%
             bottom: 15%
-      &__wine
-        animation: aboutWine 7s infinite
-        +a(null, 0)
-        +max(sm)
-          +w(100px)
-        +min(sm)
-          left: 15%
-          max-width: 250px
       &__form
         animation: aboutTitle 15s ease -10s infinite
         z-index: -2
-        +w(200px)
+        +w(250px)
         +a(0, 15px)
+    &-bg
+      +a()
+      z-index: 1
+      max-height: 50px
+      +min(sm)
+        max-height: 80px
+      &_1
+        top: 0
+        left: 0
+        +min(sm)
+          top: 5%
+          left: 15%

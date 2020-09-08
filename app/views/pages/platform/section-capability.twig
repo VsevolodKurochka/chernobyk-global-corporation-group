@@ -1,39 +1,38 @@
 {% import 'macros/landing.twig' as landing %}
+{% set bgImages = ['img/circle.png'] %}
+
 <section class="platform-capability">
+    {% for image in bgImages %}
+        {{ landing.image({
+            src: image,
+            alt: "bg-#{loop.index}",
+            class: "platform-capability__bg platform-capability__bg_#{loop.index}"
+        }) }}
+    {% endfor %}
     {% include 'components/common/section-header.twig' with {
         class: 'section-header_white platform-capability-header',
         background: 'узнать больше',
         title: title
     } %}
-    <div class="platform-capability__row">
-        <div class="platform-capability__content">
-            <p class="platform-capability__title">
-                <strong class="color-brand-1">Обратитесь к члену Сообщества</strong><br>за реферальной ссылкой
-            </p>
-        </div>
-        <div
-            class="platform-capability__wrapper"
-            data-action="modal"
-            data-open="#modal-platform">
-            {{ landing.image({
-                src: manImage,
-                alt: title|striptags,
-                class: 'platform-capability__man'
-            }) }}
+    <div class="container">
+        <div class="platform-capability__row">
+            <div class="platform-capability__content">
+                <p class="platform-capability__title">
+                    <strong class="color-brand-1">Обратитесь к члену <br>Сообщества GCG</strong><br>за реферальной<br> ссылкой
+                </p>
+            </div>
+            <div
+                class="platform-capability__wrapper"
+                data-action="modal"
+                data-open="#modal-platform">
+                {{ landing.image({
+                    src: manImage,
+                    alt: title|striptags,
+                    class: 'platform-capability__man'
+                }) }}
+            </div>
         </div>
     </div>
-    <nav class="footer-menu">
-        <ul>
-            {% for item in platform_navigation %}
-                <li class="footer-menu__item">
-                    <a class="footer-menu__link" href="{{ item.href }}">{{ item.text }}</a>
-                </li>
-            {% endfor %}
-            <li class="footer-menu__item">
-                <button class="footer-menu__link" data-action="modal" data-open="#modal-platform">Вход для членов сообщества</button>
-            </li>
-        </ul>
-    </nav>
     {{ landing.image({
         src: 'img/rectangle-top-section.png',
         alt: title,
