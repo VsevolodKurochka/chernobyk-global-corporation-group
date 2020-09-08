@@ -15,7 +15,7 @@
     content: ''
     +a(null, null, 0, 0)
     +size(100%, 200px)
-    +bgc($color-brand-2)
+    +bgc(#181118)
     z-index: -1
     filter: blur(25px)
     opacity: 0.5
@@ -53,9 +53,12 @@
       +mt(0)
 
   &__quote
+    +c($color-brand-1)
     +mb(30px)
-    +min(sm)
-      opacity: 0.4
+
+  &__body
+    +min(md)
+      max-width: 390px
 
   &__list
     list-style: none
@@ -95,7 +98,7 @@
       z-index: -3
 
   &-start
-    +bgc($color-brand-2-darken)
+    +bgc(#181118)
     .about__image
       top: auto
       +min(sm)
