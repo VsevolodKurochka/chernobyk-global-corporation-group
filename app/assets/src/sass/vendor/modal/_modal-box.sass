@@ -1,0 +1,104 @@
+.modal
+  $self: &
+
+  &__box
+    +r()
+    margin: 30px auto
+    padding: 40px 15px 30px
+    +bgc($color-white)
+    +bs("0 12px 15px 0 rgba(0, 0, 0, 0.25)")
+    +tr()
+
+    +min(xs)
+      padding: 24px
+      &_default
+        +w(460px)
+
+    +min(sm)
+      &_small
+        +w(600px)
+        margin: 30px auto
+
+
+    &_medium
+      +min(sm)
+        +w(750px)
+        margin: 30px auto
+      +min(md)
+        +w(1000px)
+
+    &_transparent
+      +bgc(transparent)
+      box-shadow: none
+
+      .modal__body
+        +pt(30px)
+
+    &_form
+      +bgc(transparent)
+      +bgi('../img/form-bg.jpg')
+      border-radius: 10px
+      +max(sm)
+        max-height: 80%
+        overflow-y: overlay
+      +min(sm)
+        +w(770px)
+        &_small
+          +w(400px)
+      +min(md)
+        +px(70px)
+
+
+    &-header .section-header
+      &__background
+        +fs(20px)
+      +min(sm)
+        &__background
+          +fs(50px)
+          top: -10px
+        &__title
+          +fs(20px)
+
+    &_effect-1
+      opacity: 0
+      transform: scale(0.7)
+
+      #{$self}_showing_in &
+        opacity: 1
+
+    &_effect-2
+      opacity: 0
+      transform: translateX(20%)
+      transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
+
+      #{$self}_showing_in &
+        opacity: 1
+
+    &_effect-3
+      opacity: 0
+      transform: translateY(20%)
+      transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
+
+      #{$self}_showing_in &
+        opacity: 1
+
+    &_effect-4
+      opacity: 0
+      transform-style: preserve-3d
+      transform: rotateY(-70deg)
+
+      #{$self}_showing_in &
+        transform: rotateY(0deg)
+        opacity: 1
+
+    &_effect-5
+      opacity: 0
+      transform-style: preserve-3d
+      transform: rotateX(-70deg)
+
+      #{$self}_showing_in &
+        transform: rotateX(0deg)
+        opacity: 1
+
+    #{$self}_showing_in &
+      transform: none

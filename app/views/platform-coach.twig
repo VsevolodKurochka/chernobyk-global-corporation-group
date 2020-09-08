@@ -1,0 +1,71 @@
+{% import 'macros/base.twig' as macros %}
+{% extends 'layouts/mainLayout.twig' %}
+
+{% set logo = 'img/vip-coach-logo.png' %}
+
+{% set title = 'Grono' %}
+{% set description = 'IT-платформа Grono - Техническое решение для привлечения клиентов и работы с ними' %}
+{% set image = logo %}
+{% set url = 'url' %}
+
+{% block meta %}
+{{ macros.meta(title, description, image, url) }}
+{% endblock %}
+
+{% block css %}
+{{ macros.css("css/style.min.css") }}
+{% endblock %}
+
+{% block js %}
+{{ macros.js("js/jquery.min.js") }}
+{{ macros.js("js/jquery.lazy.min.js") }}
+{{ macros.js("js/jquery.main.js") }}
+{% endblock %}
+
+{% block nav %}
+    {% include 'components/navigation/navigation.twig' with {
+        items: platform_navigation,
+        logo: logo,
+        addition: {
+            show: true
+        }
+    } %}
+{% endblock %}
+
+{% block content %}
+{%
+    include 'pages/platform/section-greeting.twig' with {
+        title: 'IT-платформа',
+        subtitle: 'Техническое решение<br>для привлечения клиентов <br>и работы с ними',
+    }
+%}
+{% include 'pages/platform/section-service.twig' with {
+    bgImages: ['img/service-book.png', 'img/wine.png']
+} %}
+{% include 'pages/platform/section-about.twig' with {
+    backgroundTitle: 'Старт'
+} %}
+{% include 'pages/platform/section-results.twig' with {
+    title: 'Достигайте быстрых результатов'
+} %}
+{% include 'pages/platform/section-connect.twig' with {
+    title: '',
+    content: 'Платформа — это уникальное IT-решение, созданное специально для Сообщества с целью достижения ими
+    быстрых результатов в бизнесе.',
+    formPictureSrc: 'img/form-picture-coach.png'
+} %}
+    {% include 'pages/platform/section-tips.twig' with {
+        image1: 'img/tips-1.png',
+        image2: 'img/tips-2.png',
+        image3: 'img/tips-3-coach.png',
+        image4: 'img/tips-4-coach.png'
+    } %}
+{% include 'pages/platform/section-capability.twig' with {
+    title: 'Хотите узнать больше о возможностях <br>IT-платформы?',
+    manImage: 'img/man-tshirt-vip.png'
+} %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/footer/footer.twig' %}
+{% endblock %}

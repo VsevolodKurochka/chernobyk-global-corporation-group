@@ -1,0 +1,111 @@
+.map
+  +r()
+  +pt(60px)
+  z-index: 2
+  &-bg
+    +a()
+    z-index: -1
+    max-height: 120px
+    +min(sm)
+      max-height: 200px
+    +min(lg)
+      max-height: none
+    &_1
+      top: -5%
+      left: 0
+      +min(sm)
+        top: 0
+    &_2
+      top: -7%
+      right: 0
+      +min(sm)
+        top: -15%
+    &_3
+      bottom: -5%
+      left: -5%
+
+      +min(sm)
+        bottom: 0
+        left: 0
+    &_4
+      bottom: -15%
+      right: 0
+  &-content
+    +mb(45px)
+  &-footer
+    +ta(center)
+    &__title
+      +ff('b')
+    &__ship
+      max-width: 100px
+      +mb(15px)
+      +min(sm)
+        max-width: none
+        +mb(45px)
+  &-container
+    +max(sm)
+      +mt(30px)
+  &-control
+    +r()
+    display: flex
+    flex-wrap: wrap
+    +ai(center)
+    +pl(45px)
+    +min(sm)
+      +pl(0)
+      +mt(60px)
+    +min(md)
+      +mt(120px)
+    &__buttons
+      flex-basis: 55px
+      +mr(15px)
+      +fs(0)
+    &__title
+      flex-basis: 0
+      flex-grow: 1
+      +fs(13px)
+      +c($color-brand-3)
+      +min(lg)
+        +fs(17px)
+      span
+        display: inline-block
+        border-bottom: 1px solid transparentize($color-brand-3, 0.2)
+    &__subtitle
+      +c(#acb4b8)
+      +fs(16px)
+      +a(calc(100% - 15px), null, null, 25px)
+      transform: rotate(-90deg)
+      transform-origin: left
+      +min(sm)
+        top: calc(100% + 150px)
+    &__button
+      +r()
+      +d(inline-block)
+      +size(50px)
+      border-radius: 100%
+      +bgc(#c9cfd2)
+      border: none
+      +tr()
+      outline: none
+      &:hover
+        transform: scale(1.05)
+        +bgc($color-brand-3)
+      &.active
+        +bgc($color-brand-3)
+      &:after
+        content: ''
+        +tr()
+        +a(null, null, null, 19px)
+        +d(inline-block)
+        border: solid $color-white
+        border-width: 0 2px 2px 0
+        padding: 5px
+        z-index: 1
+      &_top
+        +mb(30px)
+      &_top:after
+        top: 22px
+        transform: rotate(-135deg)
+      &_bottom:after
+        top: 17px
+        transform: rotate(45deg)

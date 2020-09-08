@@ -1,0 +1,31 @@
+.platform-tips
+  overflow: hidden
+  +pt(30px)
+  +max(sm)
+    padding: 45px 15px 15px 15px
+
+  &-item_1 .step-item
+    &:before
+      bottom: -50%
+      left: -15%
+      transform: rotate(90deg) scaleY(-1)
+      +min(sm)
+        bottom: -40%
+        transform: rotate(145deg)
+        left: -45%
+      +min(md)
+        bottom: -25%
+        left: -25%
+
+  &-item_3 .step-item
+    &:before
+      bottom: -50%
+      left: -15%
+      transform: rotate(90deg) scaleY(-1)
+      +min(sm)
+        bottom: -40%
+        transform: rotate(10deg) scaleY(-1)
+        left: -45%
+      +min(md)
+        bottom: -25%
+        left: -25%

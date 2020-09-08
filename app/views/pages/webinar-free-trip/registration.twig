@@ -1,0 +1,101 @@
+{% import 'macros/landing.twig' as landing %}
+<section class="webinar-registration" id="section-registration">
+    {% include 'components/common/section-header.twig' with {
+        class: 'section-header_white webinar-registration__header',
+        background: 'регистрация',
+        title: 'Выберите удобный для вас <br>способ регистрации'
+    } %}
+    <div class="container">
+        <div class="row webinar-registration__row">
+            <div class="col-12 col-sm-6">
+                <form action="#" method="POST" class="form">
+                    <div class="row form__row form__row_large">
+                        <div class="col-12 col-md-6 form__column form__column_block">
+                            <label class="form__label">
+                                <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Введите ваш E-mail"
+                                        class="form__input form__input_large">
+                            </label>
+                        </div>
+                        <div class="col-12 col-md-6 form__column form__column_block">
+                            {% include 'components/common/messenger-item.twig' with {
+                                image: 'img/telegram-logo.png',
+                                title: 'Telegram',
+                                href: '#'
+                            } %}
+                        </div>
+                        <div class="col-12 form__column">
+                            <label class="control control_fluid control_text_blue control_text_large">
+                                <input
+                                    name="smsCheckbox"
+                                    type="checkbox"
+                                    class="js-checkbox-phone"
+                                />
+                                <div class="control__indicator"></div>
+                                <span class="control__text">Напомнить мне о старте мастер класса <br>в sms-сообщении</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row form__row form__row_large">
+                        <div class="col-12 col-md-6 form__column form__column_block js-column-phone" style="display: none">
+                            <label class="form__label">
+                                <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Введите ваш телефон"
+                                        class="form__input form__input_large">
+                            </label>
+                        </div>
+                        <div class="col-12 form__column">
+                            <label class="control control_fluid control_text_blue control_text_large">
+                                <input
+                                    name="dogovorAferta"
+                                    type="checkbox"
+                                />
+                                <div class="control__indicator"></div>
+                                <span class="control__custom">
+                                    <button
+                                        type="button"
+                                        data-action="modal"
+                                        class="control__button"
+                                        data-open="#modal-politic">Согласен с условиями политики конфиденциальности</button>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form__row form__row_large">
+                        <button type="submit" class="btn btn_brand-1 form__submit">Зарегистрироваться бесплатно</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-sm-6 webinar-registration__image-outer">
+                {{ landing.image({
+                    src: 'img/webinar-woman.png',
+                    alt: title,
+                    class: 'webinar-registration__image'
+                }) }}
+            </div>
+        </div>
+    </div>
+    <nav class="footer-menu">
+        <ul>
+            {% for item in navigation %}
+                <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="{{ item.href }}">{{ item.text }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    {{ landing.image({
+        src: 'img/rectangle-top-section.png',
+        alt: title,
+        class: 'rectangle rectangle_top'
+    }) }}
+    {{ landing.image({
+        src: 'img/rectangle-bottom-section.png',
+        alt: title,
+        class: 'rectangle rectangle_bottom'
+    }) }}
+</section>

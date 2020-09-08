@@ -1,0 +1,179 @@
+.about
+  +r()
+  +pt(90px)
+  +c($color-white)
+  z-index: 1
+  overflow: hidden
+  +mb(0)
+  +min(sm)
+    +py(130px, 70px)
+  +min(md)
+    +pb(100px)
+  +min(lg)
+    +py(200px, 130px)
+  &:after
+    content: ''
+    +a(null, null, 0, 0)
+    +size(100%, 200px)
+    +bgc($color-brand-2)
+    z-index: -1
+    filter: blur(25px)
+    opacity: 0.5
+
+  &__row
+    +min(sm)
+      flex-direction: row-reverse
+      +jc(space-between)
+      +ai(center)
+
+  &_start &__row
+    +min(sm)
+      +ai(flex-end)
+
+  &__content
+    +offset('b', 30px)
+    +min(md)
+      +offset('b', 60px)
+
+  &__image
+    +r()
+    z-index: -2
+    +max(sm)
+      max-width: 250px
+    +min(sm)
+      top: 130px
+    &-wrapper
+      +max(sm)
+        +mt(30px)
+        +ta(center)
+
+  &__next
+    +max(sm)
+      +d(none)
+      +mt(0)
+
+  &__quote
+    +mb(30px)
+    +min(sm)
+      opacity: 0.4
+
+  &__list
+    list-style: none
+    counter-reset: aboutCounter
+    li
+      +r()
+      counter-increment: aboutCounter
+      +mb(25px)
+      +min(md)
+        +mb(45px)
+      &:before
+        content: counter(aboutCounter)
+        +a(-15px, null, null, -15px)
+        +ff('bl')
+        +c(#e6f1f7)
+        +fs(60px)
+        opacity: 0.1
+        +min(md)
+          top: -30px
+          left: -30px
+          +fs(95px)
+
+  &__arrow
+    +max(sm)
+      +a(null, null, null, 0)
+      max-width: 75px
+      transform: rotate(110deg)
+
+  &-who
+    +bgi('../img/about-bg.jpg')
+    &:before
+      content: ''
+      +a(0, 0)
+      +size(100%)
+      +bgc($color-brand-2)
+      opacity: 0.7
+      z-index: -3
+
+  &-start
+    +bgc($color-brand-2-darken)
+    .about__image
+      top: auto
+      +min(sm)
+        +a(null, null, -45px, -10%)
+      +min(md)
+        max-width: none
+
+  &-webinar
+    +bgc($color-brand-2-darken)
+    .about
+      &__image
+        +min(sm)
+          top: 0
+          max-width: 500px
+          left: -100px
+        +min(md)
+          max-width: none
+          left: -320px
+      &__row
+        +min(sm)
+          +mb(-150px)
+          +jc(center)
+          +ai(self-start)
+
+  &-connect
+    +bgc($color-brand-2-darken)
+    +pb(100px)
+    +min(sm)
+      +pb(200px)
+    @at-root
+      @keyframes aboutWine
+        0%, 100%
+          transform: none
+        50%
+          transform: translateY(45px)
+      @keyframes aboutTitle
+        0%, 100%
+          transform: none
+        50%
+          transform: translateY(-45px)
+    .about__row
+      +min(sm)
+        +jc(space-around)
+    &-content
+      +min(sm)
+        +mt(100px)
+    &-animation
+      +a()
+      +max(sm)
+        +size(100%)
+        opacity: 0.1
+      +min(sm)
+        +r()
+        min-height: 400px
+      &__title
+        +ff('bl')
+        +fs(65px)
+        transform: rotate(-90deg)
+        +min(sm)
+          +fs(100px)
+        +min(md)
+          +fs(130px)
+        &-wrapper
+          +a(null, null, 60%, -80px)
+          animation: aboutTitle 15s infinite
+          +min(sm)
+            left: -30%
+            bottom: 15%
+      &__wine
+        animation: aboutWine 7s infinite
+        +a(null, 0)
+        +max(sm)
+          +w(100px)
+        +min(sm)
+          left: 15%
+          max-width: 250px
+      &__form
+        animation: aboutTitle 15s ease -10s infinite
+        z-index: -2
+        +w(200px)
+        +a(0, 15px)

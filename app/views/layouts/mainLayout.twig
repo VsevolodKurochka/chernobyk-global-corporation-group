@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block meta %}{% endblock %}
+  {% block css %}{% endblock %}
+</head>
+<body class="{{ customBodyClass|default('') }}">
+{#% include 'components/common/preloader.twig' %#}
+{% block nav %}
+    {% include 'components/navigation/navigation.twig' %}
+{% endblock %}
+<main class="site">
+{% block content %}
+  Sorry, no content
+{% endblock %}
+</main>
+{% block footer %}
+    {% include 'components/footer/footer.twig' %}
+{% endblock %}
+{% block js %}{% endblock %}
+</body>
+</html>

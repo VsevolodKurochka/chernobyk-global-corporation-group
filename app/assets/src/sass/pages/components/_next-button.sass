@@ -1,0 +1,53 @@
+.next-button
+  +r()
+  +d(inline-block)
+  +size(50px)
+  border-radius: 100%
+  +tr()
+  +min(sm)
+    +size(70px)
+  &:hover
+    transform: scale(1.05)
+  &:before,
+  &:after
+    content: ''
+    +tr()
+  &:after
+    +a(17px, null, null, 19px)
+    +d(inline-block)
+    border: solid $color-brand-3
+    border-width: 0 2px 2px 0
+    padding: 5px
+    transform: rotate(45deg)
+    z-index: 1
+    +min(sm)
+      top: 25px
+      left: 27px
+      padding: 7px
+      border-width: 0 3px 3px 0
+  &_brand-1
+    +bgc(#fca328)
+    &:hover
+      +bgc($color-brand-3)
+    &:after
+      border-color: $color-white
+    &:before
+      +a(50%, null, null, 50%)
+      transform: translate(-50%, -50%)
+      +size(90%)
+      +bgc(#ff9605)
+      border-radius: 100%
+      border: 1px solid $color-white
+      opacity: 0.2
+  &_arrow-white
+    &:after
+      border-color: $color-white
+    &:hover
+      &:after
+        border-color: $color-brand-1
+  &__wrapper
+    +r()
+    z-index: 1
+    +w(100%)
+    +mt(30px)
+    +ta(center)

@@ -1,0 +1,47 @@
+.trend
+  +r()
+  z-index: 2
+  overflow: hidden
+  +my(0)
+  +pt(45px)
+  &__row
+    +row()
+    +min(sm)
+      +mx(-15px)
+      +jc(center)
+      justify-content: space-between
+  &__title
+    +ff('b')
+    +mb(30px)
+    +max(sm)
+      +pl(100px)
+    +min(lg)
+      +mb(60px)
+  &__ship
+    &-image
+      +r()
+      z-index: -1
+      +max(sm)
+        left: -15px
+        max-width: 90px
+        +mb(-75px)
+  &__list
+    +c($color-gray)
+    +min(md)
+      +pl(90px)
+  &__bag
+    z-index: -1
+    +ta(right)
+    +max(sm)
+      +a(null, -15px, 0)
+    &-image
+      +r()
+      max-width: 150px
+      +max(sm)
+        opacity: 0.5
+      +min(sm)
+        max-width: 300px
+      +min(lg)
+        max-width: none
+  &__next
+    +mt(60px)

@@ -1,0 +1,56 @@
+.video
+  +r()
+  +py(60px, 45px)
+  +mt(0)
+  +bgi('../img/video-bg.jpg', center bottom)
+  +min(sm)
+    +pt(150px)
+    background-position: 0 bottom
+  &__header
+    +min(sm)
+      justify-content: center
+  &__section-header
+    +min(md)
+      +mb(70px)
+  &__row
+    +r()
+    +ta(center)
+  &__bg
+    +size(270px, 150px)
+    box-shadow: 0px 79px 126.42px 20.58px rgba(6, 87, 132, 0.56)
+    object-fit: cover
+    +min(sm)
+      +size(650px, 400px)
+    +min(md)
+      +size(865px, 500px)
+  &__play
+    +a(50%, null, null, 50%)
+    transform: translate(-50%, -50%) scale(1)
+    background-color: transparent
+    +bgi('../img/youtube-logo.png')
+    +size(125px, 108px)
+    border: none
+    +tr()
+    transform-origin: left
+    &:hover
+      transform: scale(0.96) translate(-50%, -50%)
+  &__next
+    +mt(120px)
+    +min(sm)
+      +my(250px, 80px)
+    +min(lg)
+      +mt(380px)
+  &__glasses
+    +a(-5%, null, null, 15px)
+    z-index: 1
+    max-width: 120px
+    +min(sm)
+      left: auto
+      right: 15px
+      top: -5%
+      max-width: 250px
+    +min(md)
+      top: -10%
+      max-width: 350px
+    +min(lg)
+      max-width: none

@@ -1,0 +1,90 @@
+.model
+  +r()
+  +pt(45px)
+  overflow: hidden
+  &__header
+    +min(sm)
+      +jc(center)
+  &-row
+    +max(sm)
+      +offset('b', 60px)
+  &-row-1
+    +min(sm)
+      +mb(200px)
+    +min(md)
+      +mb(450px)
+    &__image
+      +max(sm)
+        max-width: 250px
+      +min(md)
+        max-width: none
+    &__image-column
+      +max(sm)
+        +pr(0)
+        +ta(right)
+      +min(sm)
+        +a(0, 0)
+    &__content
+      +r()
+      +min(md)
+        +ml(15%)
+    .step-item
+      &:before
+        +max(sm)
+          top: -100px
+          left: -30px
+          transform: rotate(90deg) scaleY(-1)
+        +min(sm)
+          right: -25%
+          top: 20%
+  &-row-2
+    +r()
+    &__image
+      +max(md)
+        max-width: 250px
+      +min(sm)
+        +a(-25%, null, null, 0)
+      +min(md)
+        max-width: none
+        left: -320px
+      &-column
+        +max(sm)
+          +pl(0)
+    &__body
+      +min(md)
+        +ml(15%)
+    &__images
+      +my(30px)
+      +min(sm)
+        +mb(60px)
+    &__footer
+      +c($color-gray)
+    .step-item
+      &:before
+        +max(md)
+          top: -100px
+          left: 100px
+          transform: rotate(90deg)
+        +min(md)
+          left: -30%
+          top: -15%
+          transform: scaleX(-1)
+  &__next
+    +mt(30px)
+    +min(md)
+      +mt(150px)
+
+  &-row
+    &__title
+      +d(none)
+      +a(null, null, 0, 0)
+      +c(#f2f3f7)
+      +ff('bl')
+      +lh(1)
+      transform: rotate(-90deg)
+      +tt(uppercase)
+      +min(md)
+        +d(block)
+        +fs(90px)
+        bottom: -260px
+        left: -130px

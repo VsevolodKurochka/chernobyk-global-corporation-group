@@ -1,0 +1,66 @@
+.step-row
+  $self: &
+  +r()
+
+  +max(sm)
+    +offset('b', 45px)
+
+  +min(sm)
+    +ai(center)
+
+  &__image
+    +r()
+    max-width: 200px
+    +min(sm)
+      max-width: none
+
+  &__wrapper
+    +px(0)
+    +max(sm)
+      +mb(-30px)
+
+  &:nth-child(even)
+    flex-direction: row-reverse
+    +jc(space-between)
+    #{$self}__wrapper
+      +ta(right)
+    #{$self}__image
+      right: -15px
+      +min(sm)
+        right: -15%
+      +min(xlg)
+        right: -35%
+
+  &:nth-child(odd)
+    #{$self}__image
+      left: -15px
+      +min(sm)
+        left: -45%
+      +min(xlg)
+        left: -80%
+
+  &_1 .step-item
+    &:before
+      bottom: -50%
+      left: 0
+      transform: rotate(90deg) scaleY(-1)
+      +min(sm)
+        bottom: -40%
+        transform: rotate(145deg)
+        left: -45%
+      +min(md)
+        bottom: -25%
+        left: -25%
+
+  &_3 .step-item
+    &:before
+      bottom: -35%
+      left: 0
+      transform: rotate(75deg) scaleY(-1)
+      +min(sm)
+        bottom: -40%
+        transform: rotate(10deg) scaleY(-1)
+        left: -45%
+      +min(md)
+        bottom: -25%
+        left: -25%

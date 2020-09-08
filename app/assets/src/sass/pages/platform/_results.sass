@@ -1,0 +1,35 @@
+.platform-results
+  +r()
+  z-index: 2
+  +my(0)
+  +pt(45px)
+  &__row
+    +min(sm)
+      +row()
+      +ai(center)
+  &__image
+    z-index: -1
+    +r(null, null, null, -15px)
+    +max(sm)
+      +a()
+      max-width: 200px
+      opacity: 0.15
+  &__list
+    +c($color-gray)
+    +min(sm)
+      max-width: 500px
+  &__notebook
+    +a(null, 0, 0)
+    z-index: -1
+    max-width: 250px
+    +min(sm)
+      max-width: 300px
+      bottom: 15%
+    +min(lg)
+      max-width: none
+  &__next
+    +mt(60px)
+    +min(sm)
+      +mt(120px)
+    +min(lg)
+      +mt(190px)

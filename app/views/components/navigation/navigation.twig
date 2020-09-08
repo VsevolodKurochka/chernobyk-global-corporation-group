@@ -1,0 +1,26 @@
+{% import 'components/navigation/macros.twig' as nav %}
+<div class="nav__fixed">
+    <div class="nav" id="js-navigation">
+        <div class="nav__container container">
+            <div class="nav__row row">
+                {{
+                    nav.logo({
+                        "class": '',
+                        "logo": "#{path}/#{logo}",
+                        "alt": title|striptags
+                    })
+                }}
+                {% if items %}
+                    {{
+                        nav.menu('', items)
+                    }}
+                {% endif %}
+                {% if addition.show == true %}
+                    {{
+                        nav.addition('')
+                    }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

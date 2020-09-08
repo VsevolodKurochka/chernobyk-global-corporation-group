@@ -1,0 +1,55 @@
+{% import 'macros/landing.twig' as landing %}
+<section class="about about-connect" id="section-about">
+    <div class="container">
+        {% include 'components/common/section-header.twig' with {
+            class: 'about__header section-header_white',
+            background: 'свой бизнес',
+            title: 'Как подключиться к IT-платформе?'
+        } %}
+        <div class="row about__row">
+            <div class="col-12 col-sm-6 col-md-5 about-connect-content ">
+                <p class="about__content">{{ content }}</p>
+                <p class="about__quote">
+                    Поэтому, попасть на Платформу можно только по реферальной ссылке от участника Сообщества.
+                </p>
+                <button
+                    class="btn btn_brand-1"
+                    data-action="modal"
+                    data-open="#modal-platform">
+                    Посмотреть Платформу
+                </button>
+            </div>
+            <div class="col-12 col-sm-6 col-md-5 about-connect-animation">
+                {% if title %}
+                    <div class="about-connect-animation__title-wrapper">
+                        <p class="about-connect-animation__title">{{ title }}</p>
+                    </div>
+                {% endif %}
+                {{ landing.image({
+                    src: 'img/wine.png',
+                    alt: 'Сообщество единомышленников-предпринимателей из 151 страны мира.',
+                    class: 'about-connect-animation__wine'
+                }) }}
+                {{ landing.image({
+                    src: formPictureSrc,
+                    alt: 'Сообщество единомышленников-предпринимателей из 151 страны мира.',
+                    class: 'about-connect-animation__form'
+                }) }}
+            </div>
+        </div>
+        {% include 'components/common/next-button.twig' with {
+            class: 'about__next',
+            buttonClass: 'next-button_arrow-white'
+        } %}
+    </div>
+    {{ landing.image({
+        src: 'img/rectangle-top-section.png',
+        alt: 'Мы строим',
+        class: 'rectangle rectangle_top'
+    }) }}
+    {{ landing.image({
+        src: 'img/wave.png',
+        alt: 'wave',
+        class: 'wave wave_bottom'
+    }) }}
+</section>

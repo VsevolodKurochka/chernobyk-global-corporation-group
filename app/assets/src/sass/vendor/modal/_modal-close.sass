@@ -1,0 +1,24 @@
+.modal
+  &__close
+    +d(block)
+    +w(40px)
+    +a(0, 0)
+    +bgc(transparent)
+    border: none
+    outline: none
+
+    +fs(40px)
+    +fw(900)
+    +lh(1)
+    z-index: 1
+    -webkit-tap-highlight-color: transparent
+    +c($color-white)
+
+    +tr()
+
+    &_general
+      +c($color-general)
+
+    &:hover
+      +c($color-brand-1)
+      transform: rotate(180deg)

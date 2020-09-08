@@ -1,0 +1,42 @@
+<section class="platform-tips" id="section-platform-tips">
+    {% include 'components/common/section-header.twig' with {
+        class: 'platform-tips__header',
+        background: 'платформа',
+        title: 'Несколько подсказок для тех, кто начал <br>работать с платформой'
+    } %}
+    <div class="container platform-tips__content">
+        {% include 'pages/components/step-row.twig' with {
+            index: 1,
+            image: image1,
+            number: 1,
+            stepItemClass: "step-item_arrow",
+            title: 'Хотите первым узнавать <br>о главных новостях?',
+            body: 'Включите Push-уведомления — и система сообщит вам самое важное даже если платформа закрыта.'
+        } %}
+        {% include 'pages/components/step-row.twig' with {
+            index: 2,
+            image: image2,
+            number: '2',
+            title: 'Ищете дополнительную <br>мотивацию?',
+            body: 'Устройте корпоративные игры! Бросьте вызов члену Сообщества и выиграйте достойный приз.'
+        } %}
+        {% include 'pages/components/step-row.twig' with {
+            index: 3,
+            image: image3,
+            number: 3,
+            stepItemClass: "step-item_arrow",
+            title: 'Вы новичок и не знаете,<br>как работать с воронкой?',
+            body: 'Пройдите обучение внутри Платформы и посмотрите, как наиболее эффективно использовать уже загруженные материалы'
+        } %}
+        {% include 'pages/components/step-row.twig' with {
+            index: 4,
+            image: image4,
+            number: 4,
+            title: 'Хотите лучше развивать<br>команду?',
+            body: 'Используйте элементы коучинга. В платформу уже встроены Диаграмма Ганта, Матрица Эйзенхауэра и другие полезные инструменты.'
+        } %}
+    </div>
+    {% include 'components/common/next-button.twig' with {
+        class: 'model__next'
+    } %}
+</section>

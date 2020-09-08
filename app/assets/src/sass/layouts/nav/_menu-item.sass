@@ -1,0 +1,37 @@
+.nav__menu-item
+  +d(block)
+  +tr()
+
+  a
+    +d(block)
+    +r()
+    +c(inherit)
+    +fs(14px)
+    +c($color-white)
+    text-decoration: none
+
+  +max(md)
+    +mb(10px)
+
+    a
+      padding: 10px 15px
+      +c($color-white)
+
+
+  +min(md)
+    +d(inline-block)
+    vertical-align: middle
+    +offset('r', 15px)
+
+    a
+      +py(7px)
+      +linkEffect3($color-brand-3)
+
+      &.active
+        &:before
+          +w(100%)
+          transition: width .5s cubic-bezier(.22,.61,.36,1)
+        &:after
+          width: 100%
+          background-color: transparent
+          transition: 0s

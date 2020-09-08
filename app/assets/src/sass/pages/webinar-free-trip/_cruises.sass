@@ -1,0 +1,134 @@
+.cruises
+  +r()
+  +pt(30px)
+  z-index: 2
+  &-bg
+    +a()
+    z-index: 1
+
+    &_1
+      top: -2%
+      left: 5%
+      +min(sm)
+        top: 0
+    &_2
+      top: -3%
+      right: 5%
+      +min(md)
+        top: -10%
+    &__image
+      max-height: 75px
+      +min(sm)
+        max-height: 200px
+      +min(lg)
+        max-height: none
+      &_1
+        animation: cruisesImageRotate 30s 0s infinite
+        @at-root
+          @keyframes cruisesImageRotate
+            0%
+              transform: rotate(0deg)
+            100%
+              transform: rotate(360deg)
+
+  &__body
+    overflow: hidden
+    +pt(30px)
+
+  &__item
+    $item: &
+    +r()
+
+    +max(sm)
+      +mb(30px)
+
+    +min(sm)
+      +ai(center)
+
+    &-content
+      +r()
+      p
+        +offset('b', 15px)
+
+    &-image
+      +r()
+      max-width: 200px
+      +min(sm)
+        max-width: 400px
+      +min(md)
+        max-width: none
+
+    &-bg
+      +d(none)
+      +a(null, null, 0, 0)
+      +c(#f2f3f7)
+      +ff('bl')
+      +lh(1)
+      transform: rotate(-90deg)
+      +tt(uppercase)
+      +min(md)
+        +d(block)
+        +fs(90px)
+        bottom: -260px
+        left: -130px
+
+    &-arrow
+      +max(sm)
+        max-width: 50px
+      &-animation
+        +d(inline-block)
+        +r()
+        animation: cruisesArrowAnimation 1s 0s infinite
+        @at-root
+          @keyframes cruisesArrowAnimation
+            0%, 100%
+              transform: none
+            50%
+              transform: translateY(10px)
+
+    &:nth-child(odd)
+      +min(sm)
+        flex-direction: row-reverse
+        +jc(space-between)
+      #{$item}-outer
+        +ta(right)
+      #{$item}-image
+        right: -15px
+        +min(sm)
+          right: -30%
+        +min(xlg)
+          right: -65%
+
+    &:nth-child(even)
+      #{$item}-image
+        left: -15px
+        +min(sm)
+          left: -30%
+        +min(md)
+          left: -45%
+        +min(xlg)
+          left: -80%
+
+    &_2 &-arrow
+      +r()
+      transform: scaleX(-1) scaleY(-1) rotate(0deg)
+      +mb(15px)
+      +min(sm)
+        left: -100px
+        transform: scaleX(-1) scaleY(1) rotate(-45deg)
+      +min(md)
+        left: -135px
+
+    &_3 &-arrow
+      +r()
+      transform: scaleY(1) scaleX(-1)
+      +min(sm)
+        transform: scaleY(-1) scaleX(-1)
+        left: 100px
+      +min(md)
+        left: 135px
+      &-outer
+        +max(sm)
+          +a(-45px, null, null, 45px)
+        +min(sm)
+          +ta(right)

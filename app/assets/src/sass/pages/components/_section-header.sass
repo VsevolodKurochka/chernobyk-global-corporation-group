@@ -1,0 +1,60 @@
+.section-header
+  +ta(center)
+  +r()
+  z-index: 1
+  +mb(30px)
+  +min(md)
+    +mb(45px)
+  +min(lg)
+    +mb(70px)
+  &__inner
+    +r()
+  &__background
+    +a(-15px, null, 0)
+    +w(100%)
+    z-index: -1
+    +tt(uppercase)
+    +ff('b')
+    +c(#f2f3f7)
+    +fs(30px)
+    +lh(1)
+    +min(sm)
+      top: -30px
+      bottom: auto
+      +fs(55px)
+    +min(md)
+      +fs(75px)
+    +min(lg)
+      +fs(90px)
+  &__title
+    +r()
+    +c($color-brand-2)
+    +pb(25px)
+    +fs(20px)
+    +ff('bl')
+    +max(sm)
+      br
+        +d(none)
+    +min(sm)
+      +fs(25px)
+    +min(md)
+      +fs(30px)
+    &:before
+      content: ''
+      +a(100%, null, null, 50%)
+      transform: translateX(-50%)
+      +size(40px, 2px)
+      +bgc($color-brand-3)
+      +min(md)
+        +size(80px, 3px)
+  &__subtitle
+    +mt(20px)
+    +ff('b')
+    +min(sm)
+      +fs(20px)
+
+  &_white &
+    &__background
+      opacity: 0.1
+    &__title
+      +c($color-white)

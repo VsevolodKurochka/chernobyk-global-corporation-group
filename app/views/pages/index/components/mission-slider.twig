@@ -1,0 +1,10 @@
+{% import 'macros/landing.twig' as landing %}
+{%
+    set items = ['sl-1', 'sl-2', 'sl-3', 'sl-4', 'sl-5', 'sl-6', 'sl-7', 'sl-8', 'sl-9']
+%}
+{% for item in items %}
+    {{ landing.image({
+        src: "img/#{item}.jpg",
+        alt: item
+    }) }}
+{% endfor %}

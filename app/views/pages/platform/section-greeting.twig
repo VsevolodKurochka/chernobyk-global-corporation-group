@@ -1,0 +1,7 @@
+{% import 'macros/landing.twig' as landing %}
+{% include 'pages/modules/greeting.twig' with {
+    mode: 'greeting_platform',
+    title: title,
+    subtitle: subtitle,
+    modal: '#modal-platform'
+} %}

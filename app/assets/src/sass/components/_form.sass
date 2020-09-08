@@ -1,0 +1,75 @@
+$themeFormDesign: "new"
+
+.form
+  &__label
+    &-title
+      +mb(2px)
+      +d(block)
+      +c($color-white)
+      +fs(12px)
+      +pl(15px)
+  &__input
+    +bgc($color-white)
+    border-radius: 30px
+    +c($color-gray)
+    +ff('r')
+    padding: 12px 15px
+    +fs(12px)
+    +w(100%)
+    border: none
+    outline: none
+    +tr()
+    +placeholder()
+      +c($color-gray)
+      +tr()
+    &:focus
+      +placeholder()
+        opacity: 0
+    &_large
+      +min(sm)
+        padding: 15px 25px
+        +fs(16px)
+  &__address
+    +r()
+    +d(block)
+    &-title
+      +a(50%)
+      transform: translateY(-50%)
+      +fs(14px)
+      +c($color-gray)
+      &_prev
+        left: 20px
+      &_next
+        right: 20px
+    &-input
+      +px(75px, 97px)
+  &__submit
+    min-width: 250px
+  &__row
+    +offset('b', 10px)
+    &_large
+      +offset('b', 25px)
+  &__column
+    +max(sm)
+      +offset('b', 15px)
+    &_block
+      +offset('b', 10px)
+  &__footer
+    +ta(center)
+    +mt(30px)
+    &_left
+      +ta(left)
+
+  &__info
+    +d(flex)
+    +jc(space-between)
+    +mt(30px)
+
+  &__link
+    border: none
+    +bgc(transparent)
+    +ff('b')
+    +c($color-white)
+    +tr()
+    &:hover
+      +c($color-brand-1)

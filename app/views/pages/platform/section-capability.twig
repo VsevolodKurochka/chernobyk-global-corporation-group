@@ -1,0 +1,47 @@
+{% import 'macros/landing.twig' as landing %}
+<section class="platform-capability">
+    {% include 'components/common/section-header.twig' with {
+        class: 'section-header_white platform-capability-header',
+        background: 'узнать больше',
+        title: title
+    } %}
+    <div class="platform-capability__row">
+        <div class="platform-capability__content">
+            <p class="platform-capability__title">
+                <strong class="color-brand-3">Обратитесь к члену Сообщества</strong><br>за реферальной ссылкой
+            </p>
+        </div>
+        <div
+            class="platform-capability__wrapper"
+            data-action="modal"
+            data-open="#modal-platform">
+            {{ landing.image({
+                src: manImage,
+                alt: title|striptags,
+                class: 'platform-capability__man'
+            }) }}
+        </div>
+    </div>
+    <nav class="footer-menu">
+        <ul>
+            {% for item in platform_navigation %}
+                <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="{{ item.href }}">{{ item.text }}</a>
+                </li>
+            {% endfor %}
+            <li class="footer-menu__item">
+                <button class="footer-menu__link" data-action="modal" data-open="#modal-platform">Вход для членов сообщества</button>
+            </li>
+        </ul>
+    </nav>
+    {{ landing.image({
+        src: 'img/rectangle-top-section.png',
+        alt: title,
+        class: 'rectangle rectangle_top'
+    }) }}
+    {{ landing.image({
+        src: 'img/rectangle-bottom-section.png',
+        alt: title,
+        class: 'rectangle rectangle_bottom'
+    }) }}
+</section>

@@ -1,0 +1,124 @@
+$common-border-radius: 10px
+
+.mission
+  +r()
+  +py(60px)
+  +bgi('../img/last-bg.jpg', 0 bottom)
+  +c($color-white)
+  +min(md)
+    +py(160px)
+
+  &__section-header
+    .section-header__background
+      opacity: 0.3
+
+  &__content
+    +mb(60px)
+    +min(md)
+      +mb(120px)
+
+  &__row
+    +min(sm)
+      justify-content: space-between
+
+  &__title
+    +ff('bl')
+    +fs(60px)
+    +my(15px)
+    +lh(1)
+    +min(md)
+      +mt(45px)
+      +fs(80px)
+
+  &__intro
+    +my(45px, 30px)
+    +min(md)
+      +my(60px)
+
+  &__body
+    +ta(center)
+
+  &-slider-for
+    +min(sm)
+      +mt(150px)
+    +min(md)
+      +mt(200px)
+
+    img
+      object-fit: cover
+      border-radius: $common-border-radius
+      +min(sm)
+        +h(465px)
+      +min(md)
+        +h(500px)
+    &_desktop
+      display: none !important
+      +min(sm)
+        display: block !important
+    &_mobile
+      +mb(15px)
+      +min(sm)
+        display: none !important
+
+  &-slider-nav
+    +pb(80px)
+    +min(sm)
+      +ml(-45px)
+    .slick
+      &-track
+        +min(sm)
+          padding: 15px
+      &-arrow
+        +a(null, null, 0)
+        +size(50px)
+        border-radius: 100%
+        background-image: linear-gradient( -147deg, rgb(255,114,35) 0%, rgb(255,149,7) 100%)
+        border: none
+        font-size: 0
+
+        +tr()
+        outline: none
+        &:hover
+          transform: scale(1.05)
+        &:before
+          content: ''
+          +a(19px, null, null)
+          +d(inline-block)
+          border: solid $color-white
+          border-width: 0 2px 2px 0
+          padding: 5px
+          z-index: 1
+      &-prev
+        left: 0
+        +min(sm)
+          left: 15px
+        &:before
+          left: 21px
+          transform: rotate(135deg)
+      &-next
+        right: 0
+        +min(sm)
+          right: auto
+          left: 90px
+        &:before
+          left: 19px
+          transform: rotate(-45deg)
+    img
+      object-fit: cover
+      border-radius: $common-border-radius
+      cursor: pointer
+      +tr()
+      +mr(15px)
+      &:hover
+        transform: scale(1.05)
+      +min(sm)
+        +h(150px)
+      +min(md)
+        +h(200px)
+
+  &__body-row
+    +min(sm)
+      justify-content: center
+
+  &__button
+    min-width: 250px

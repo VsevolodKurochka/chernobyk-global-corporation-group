@@ -1,0 +1,9 @@
+{% macro image(options) %}
+  <img data-src="{{path}}/{{options.src}}" alt="{{options.alt}}" class="lazy {{ options.class }}">
+{% endmacro %}
+
+{% macro button(type, class, text, attributes) %}
+  {% import "macros/form.twig" as form %}
+  {% set default = "btn btn_brand-1 effect effect_bounce-top" %}
+  {{form.button('button', "#{default} #{class}", text, attributes)}}
+{% endmacro %}

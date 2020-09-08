@@ -1,0 +1,89 @@
+.webinar-greeting
+  +r()
+  +c($color-white)
+  +bgi('../img/webinar-greeting-bg.jpg')
+  +max(sm)
+    +py(45px, 80px)
+    &:before
+      +pseudo-overlay($color-brand-2, 0.4)
+  +min(sm)
+    +d(flex)
+    +ai(center)
+    +jc(center)
+    min-height: 700px
+
+  &__row
+    +min(sm)
+      +jc(space-between)
+
+  &__title
+    +lh(1.2)
+    +fs(21px)
+    +mb(15px)
+    +min(xs)
+      +fs(29px)
+    +min(md)
+      +fs(32px)
+    span
+      +d(inline-block)
+      padding: 4px 10px
+      +bgc($color-white)
+      +c(#035a89)
+
+  &__date
+    +mt(15px)
+    +fs(15px)
+    +min(md)
+      +fs(17px)
+
+  &__subtitle
+    +lh(1.2)
+    +fs(16px)
+    +min(sm)
+      +fs(18px)
+    +min(md)
+      +fs(20px)
+
+    span
+      +d(inline-block)
+      border-bottom: 1px solid $color-white
+
+  &__next
+    +greeting-next()
+
+  &__button
+    +min(md)
+      +mr(15px)
+
+  &__footer
+    +mt(30px)
+    +min(sm)
+      +mt(60px)
+    +min(md)
+      +d(flex)
+      +ai(center)
+      +jc(flex-end)
+      flex-direction: row-reverse
+
+    &__subtitle
+      +max(sm)
+        +mb(10px)
+        br
+          +d(none)
+
+  &__place
+    +r()
+    +min(sm)
+      +pl(10px)
+      &:before
+        content: ''
+        +a(0, null, null, 0)
+        +size(1px, 110px)
+        +bgc($color-white)
+        opacity: 0.5
+    &-outer
+      +max(sm)
+        +mb(15px)
+      +min(sm)
+        +d(flex)
+        +jc(center)

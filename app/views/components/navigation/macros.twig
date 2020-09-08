@@ -1,0 +1,41 @@
+{% macro hamburger() %}
+  <button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger">
+    <span class="hamburger__lines">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+{% endmacro %}
+
+{% macro logo(options) %}
+  {% import _self as macros %}
+  <div class="nav__logo {{options.class}}">
+    {{ macros.hamburger() }}
+    <div class="nav__logo-inner">
+      <img class="nav__logo-img" src="{{options.logo}}" alt="{{options.alt}}"/>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro menu(class, items) %}
+  <nav class="nav__menu {{class}}" id="js-navigation-menu">
+    <ul>
+      {% for item in items %}
+        <li class="nav__menu-item">
+          <a class="nav__menu-item-link js-menu-item-link" href="{{ item.href }}">{{ item.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}
+
+{% macro addition(class) %}
+  <div class="nav__addition {{class}}">
+    <button
+            class="btn nav__addition-link"
+            data-action="modal"
+            data-open="#modal-entry">Вход для членов сообщества</button>
+  </div>
+{% endmacro %}
