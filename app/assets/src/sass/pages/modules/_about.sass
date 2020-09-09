@@ -98,13 +98,27 @@
       z-index: -3
 
   &-start
-    +bgc(#181118)
+    +bgi('../img/about-start-bg.jpg')
     .about__image
       top: auto
       +min(sm)
-        +a(null, null, -45px, -10%)
+        +a(null, null, -45px, 0)
       +min(md)
         max-width: none
+
+    &__bg
+      +a()
+      z-index: 1
+      max-height: 70px
+      +min(sm)
+        max-height: 150px
+      +min(lg)
+        max-height: 220px
+      &_1
+        top: 0
+        right: 5%
+        +min(sm)
+          right: 15%
 
   &-webinar
     +bgc($color-brand-2-darken)
