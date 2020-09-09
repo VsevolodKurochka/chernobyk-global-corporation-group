@@ -1,5 +1,13 @@
 {% import 'macros/landing.twig' as landing %}
+{% set bgImages = ['img/gcg-coin.png'] %}
 <section class="about about-start" id="section-about">
+    {% for image in bgImages %}
+        {{ landing.image({
+            src: image,
+            alt: "bg-#{loop.index}",
+            class: "about-start__bg about-start__bg_#{loop.index}"
+        }) }}
+    {% endfor %}
     <div class="container">
         {% include 'components/common/section-header.twig' with {
             class: 'about__header section-header_white',
@@ -34,7 +42,7 @@
             </div>
             <div class="col-12 col-sm-6 about__image-wrapper">
                 {{ landing.image({
-                    src: 'img/start-businessman.png',
+                    src: 'img/start-woman.png',
                     alt: 'Cообщество единомышленников-предпринимателей из 151 страны мира.',
                     class: 'about__image'
                 }) }}
